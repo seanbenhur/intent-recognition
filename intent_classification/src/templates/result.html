@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			ML App
+		</div>
+		<h2>Toxic Comment  Classification</h2>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
+	<div class="results">
+
+
+		
+	{% if prediction == 0 %}
+	<h2>Add To Playlist</h2>
+	{% elif prediction == 1 %}
+	<h2>Book Restaurant</h2>
+	{% elif prediction == 2 %}
+	<h2>Get Weather</h2>
+	{% elif prediction == 3 %}
+	<h2>PlayMusic</h2>
+	{% elif prediction == 4 %}
+	<h2>Rate a Book</h2>
+	{% elif prediction == 5 %}
+	<h2>Search a Creative work</h2>
+	{% elif  prediction == 6 %}
+	<h2>Search Screening Event</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>
