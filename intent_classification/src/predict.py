@@ -3,8 +3,8 @@ import pickle
 import spacy
 import torchtext
 import torch
-from config  import *
-from lstm import LSTM  
+from config import *
+from models.lstm import LSTM  
 
 pretrained_model_path = "/content/drive/MyDrive/Models/INTENT/lstm-model.pt"
 pretrained_vocab_path = "/content/drive/MyDrive/data/dict.pkl"
