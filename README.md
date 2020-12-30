@@ -5,6 +5,7 @@ This motivation of the project is to classify the various intents of  the users 
 	<li>RNN</li>
 	<li>Bidirectional LSTM</li>
 	<li>Fastext</li>
+	<li>CNN</li>
 	<li>BERT</li>
 </ol>
 > Based on the Results, I have created a  flask rest api
