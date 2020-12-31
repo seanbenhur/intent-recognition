@@ -1,4 +1,7 @@
 # Intent Recognition with Pytorch and Flask REST API
+## Business Perspective
+> Everyday people use many kinds of personal assistance systems such as  Google Assistant,Siri,Alexa,etc.. in those systems people usually ask questions such as <b>"What is the weather in Bay Area!?","Add Wonder to mendes playlist",</b>etc...,these type of questions/commands will help in increasing the training data of those systems, and these data can be grouped into common categories such as <b>GetWeather,AddToPlaylist</b>,etc.. so in this project a Machine learning system is created to classify these intents of various users
+
 ## Description
 This motivation of the project is to classify the various intents of  the users into seven categories using methods of Deep Learning, I have used various architectures such as <br>
 <ol>
@@ -10,7 +13,6 @@ This motivation of the project is to classify the various intents of  the users 
 </ol>
 > Based on the Results, I have created a  flask rest api
 ## Installation
-
 If you want to test this on your own machine I would recommend you run it in a virtual environment or use Docker, as not to affect the rest of your files.
 
 ### Python venv
