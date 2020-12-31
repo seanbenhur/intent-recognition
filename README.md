@@ -11,7 +11,7 @@ This motivation of the project is to classify the various intents of  the users 
 	<li>CNN</li>
 	<li>BERT</li>
 </ol>
-> Based on the Results, I have created a  flask rest api
+
 ## Installation
 If you want to test this on your own machine I would recommend you run it in a virtual environment or use Docker, as not to affect the rest of your files.
 

@@ -2,19 +2,19 @@
 
 **Please, follow these steps**
 
-## Step 1: Forking and Installing py_fresh
+## Step 1: Forking and Installing intent-recogntion
 
 ​1. Fork the repo to your own github account. Click the Fork button to
 create your own repo copy under your GitHub account. Once forked, you're
 responsible for keeping your repo copy up-to-date with the upstream
-py_fresh repo.
+intent-recognition repo.
 
-​2. Download a copy of your remote username/py_fresh repo to your
+​2. Download a copy of your remote username/intent-recogntion repo to your
 local machine. This is the working directory where you will make
 changes:
 
 ```bash
-$ git clone https://github.com/oke-aditya/py_fresh.git
+$ git clone https://github.com/seanbenhur/intent-recognition.git
 ```
 
 3.  Install the requirements. You may use miniconda or conda as well.
@@ -26,10 +26,10 @@ $ pip install -r requirements.txt
 ## Step 2: Stay in Sync with the original (upstream) repo
 
 1.  Set the upstream to sync with this repo. This will keep you in sync
-    with py_fresh easily.
+    with intent-recogntion easily.
 
 ```bash
-$ git remote add upstream https://github.com/oke-aditya/py_fresh.git
+$ git remote add upstream https://github.com/seanbenhur/intent-recognition.git
 ```
 
 2.  Updating your local repo: Pull the upstream (original) repo.
@@ -81,7 +81,7 @@ gh pr create -B master -b "enter body of PR here" -t "enter title"
 #### 2. Confirm PR was created
 
 You can confirm that your PR has been created by running the following
-command, from the py_fresh folder:
+command, from the intent-recogntion folder:
 
 ```bash
 gh pr list
@@ -115,7 +115,7 @@ time and appear as a single commit in the repository.
 #### 1. Create a pull request git
 
 Upload your local branch to your remote GitHub repo
-(github.com/username/py_fresh)
+(github.com/username/intent-recognition)
 
 ```bash
 git push
@@ -123,13 +123,13 @@ git push
 
 After the push completes, a message may display a URL to automatically
 submit a pull request to the upstream repo. If not, go to the
-py_fresh main repo and GitHub will prompt you to create a pull
+intent-recognition main repo and GitHub will prompt you to create a pull
 request.
 
 #### 2. Confirm PR was created:
 
 Ensure your pr is listed
-[here](https://github.com/oke-aditya/py_fresh/pulls)
+[here](https://github.com/seanbenhur/intent-recognition/pulls)
 
 3.  Updating a PR:
 
@@ -148,9 +148,9 @@ git push origin <enter-branch-name-same-as-before>
 Maintainers and other contributors will review your pull request. Please
 participate in the discussion and make the requested changes. When your
 pull request is approved, it will be merged into the upstream
-py_fresh repo.
+intent-recognition repo.
 
 > **note**
 >
-> py_fresh repository has CI checking. It will automatically check your code
+> intent-recognition repository has CI checking. It will automatically check your code
 > for build as well.
