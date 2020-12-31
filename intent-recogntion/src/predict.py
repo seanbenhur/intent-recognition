@@ -12,9 +12,7 @@ pretrained_vocab_path = "/content/drive/MyDrive/Models/INTENT/cnndict.pkl"
 # load spacy's nlp model for tokenization
 nlp = spacy.load("en")
 # load the model
-model = CNN(
-    INPUT_DIM, EMBEDDING_DIM,N_FILTERS,FILTER_SIZES,OUTPUT_DIM,DROPOUT
-)
+model = CNN(INPUT_DIM, EMBEDDING_DIM, N_FILTERS, FILTER_SIZES, OUTPUT_DIM, DROPOUT)
 
 # load the pretrained model path
 model.load_state_dict(torch.load(pretrained_model_path))
@@ -32,4 +30,3 @@ def predict_class(intent, model=model):
     preds = model(tensor)
     max_pred = preds.argmax(dim=1)
     return max_pred.item()
-
