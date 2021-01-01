@@ -1,7 +1,4 @@
-##--coding-utf-8
-"""
-
-"""
+#loads the data from JSON files and convert them into csv files
 
 import os
 import json
@@ -76,7 +73,7 @@ class LoadData:
         return sent_list
 
 
-data = LoadingData()
+data = LoadData()
 # create a train csv file
 train_csv = data.train_data_frame
 train_csv.to_csv(train_csv_path)

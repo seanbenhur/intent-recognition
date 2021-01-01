@@ -1,3 +1,4 @@
+#all the configurations that are used to train the models
 MAX_VOCAB_SIZE = 25_000
 BATCH_SIZE = 64
 INPUT_DIM = 25002
