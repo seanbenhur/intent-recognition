@@ -1,4 +1,4 @@
-# Intent Recognition with Pytorch and Flask REST API
+# Intent Recognition with Pytorch,Torchtext and Streamlit
 ## Business Perspective
 > Everyday people use many kinds of personal assistance systems such as  Google Assistant,Siri,Alexa,etc.. in those systems people usually ask questions such as <b>"What is the weather in Bay Area!?","Add Wonder to mendes playlist",</b>etc...,these type of questions/commands will help in increasing the training data of those systems, and these data can be grouped into common categories such as <b>GetWeather,AddToPlaylist</b>,etc.. so in this project a Machine learning system is created to classify these intents of various users
 
@@ -8,7 +8,7 @@ This motivation of the project is to classify the various intents of  the users 
 	<li>RNN</li>
 	<li>Bidirectional LSTM</li>
 	<li>Fastext</li>
-	<li>CNN</li>
+	<li>TEXTCNN</li>
 	<li>BERT</li>
 </ol>
 
@@ -35,3 +35,9 @@ and finally activating it with
 ```bash
 source venv/bin/activate
 ```
+## Pretrained weights
+> The pretrained weights of this project can be found [here](https://drive.google.com/drive/folders/1MBCxlfgghc0Buwndtw3JQ5kTpez88aeE?usp=sharing),which also contains the saved vocab file
+
+## References
+These repositiries highly helped me to build this project
+<ul><li>[bentrevett/sentiment-analysis](https://github.com/bentrevett/pytorch-sentiment-analysis)</li></ul>
