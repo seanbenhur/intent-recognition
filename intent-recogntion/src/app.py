@@ -1,4 +1,3 @@
-#code for the main streamlit app
 
 import re
 import pickle
@@ -17,8 +16,6 @@ from torchtext import vocab
  #   def _default_unk_index():
   #      return 0
     #vocab._default_unk_index = _default_unk_index
-
-    
 pretrained_model_path = "/content/drive/MyDrive/Models/INTENT/cnn-model.pt"
 pretrained_vocab_path = "/content/drive/MyDrive/Models/INTENT/cnndict.pkl"
 
@@ -27,8 +24,6 @@ nlp = spacy.load("en")
 # load the model
 model = CNN(INPUT_DIM, EMBEDDING_DIM, N_FILTERS, FILTER_SIZES, OUTPUT_DIM, DROPOUT)
 device = "cuda" if torch.cuda.is_available() else "cpu"
-
-
 @st.cache()
 def load_model(model_path):
   """
@@ -41,9 +36,12 @@ with open(pretrained_vocab_path, "rb") as f:
     TEXT = pickle.load(f)
 
 
-def predict_class(intent, model=model):
+def predict_class(intent, model=model,min_len=4):
     model.eval()
+    intent = intent.lower()
     tokenized = [tok.text for tok in nlp.tokenizer(intent)]
+    if len(tokenized) < min_len:
+        tokenized += ['<pad>'] * (min_len - len(tokenized))
     indexed = [TEXT.stoi[t] for t in tokenized]
     tensor = torch.LongTensor(indexed).to(device)
     tensor = tensor.unsqueeze(1)
@@ -52,9 +50,45 @@ def predict_class(intent, model=model):
     return max_pred.item()
 
 #streamlit --code
+
 st.title("Intent recogntion using Machine learning!")
-st.write("This app uses Machine learning to predict your intent")
-intent = st.text_area("Enter a intent to play!")
+st.write("This app uses Machine learning to predict your intent, Click the speak button and speak your intent, then click the analyze button to get the prediction")
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
+from streamlit_bokeh_events import streamlit_bokeh_events
+
+stt_button = Button(label="Speak", width=100)
+
+stt_button.js_on_event("button_click", CustomJS(code="""
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+ 
+    recognition.onresult = function (e) {
+        var value = "";
+        for (var i = e.resultIndex; i < e.results.length; ++i) {
+            if (e.results[i].isFinal) {
+                value += e.results[i][0].transcript;
+            }
+        }
+        if ( value != "") {
+            document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: value}));
+        }
+    }
+    recognition.start();
+    """))
+
+result = streamlit_bokeh_events(
+    stt_button,
+    events="GET_TEXT",
+    key="listen",
+    refresh_on_update=False,
+    override_height=75,
+    debounce_time=0)
+if result:
+    if "GET_TEXT" in result:
+      intent = result.get("GET_TEXT")
+st.write(intent)
 if st.button("Analyze"):
   with st.spinner("Analyzing the intent..."):
     prediction = predict_class(intent)
@@ -72,6 +106,10 @@ if st.button("Analyze"):
       st.success("Search for creative work")
     elif prediction==6:
       st.success("Search for screening event")
+
+
+
+
 
 
 
