@@ -8,7 +8,9 @@ import streamlit as st
 from config import *
 from models.cnn import CNN
 from torchtext import vocab
-
+from bokeh.models.widgets import Button
+from bokeh.models import CustomJS
+from streamlit_bokeh_events import streamlit_bokeh_events
 
 #try:
  #   vocab._default_unk_index
@@ -53,9 +55,7 @@ def predict_class(intent, model=model,min_len=4):
 
 st.title("Intent recogntion using Machine learning!")
 st.write("This app uses Machine learning to predict your intent, Click the speak button and speak your intent, then click the analyze button to get the prediction")
-from bokeh.models.widgets import Button
-from bokeh.models import CustomJS
-from streamlit_bokeh_events import streamlit_bokeh_events
+
 
 stt_button = Button(label="Speak", width=100)
 

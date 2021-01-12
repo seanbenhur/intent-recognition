@@ -1,4 +1,6 @@
 # Intent Recognition with Pytorch,Torchtext and Streamlit
+(github.com/seanbenhur/intent-recognition/blob/main/assets/intentdemo.PNG?raw=True)
+
 ## Business Perspective
 > Everyday people use many kinds of personal assistance systems such as  Google Assistant,Siri,Alexa,etc.. in those systems people usually ask questions such as <b>"What is the weather in Bay Area!?","Add Wonder to mendes playlist",</b>etc...,these type of questions/commands will help in increasing the training data of those systems, and these data can be grouped into common categories such as <b>GetWeather,AddToPlaylist</b>,etc.. so in this project a Machine learning system is created to classify these intents of various users
 
