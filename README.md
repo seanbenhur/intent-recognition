@@ -42,4 +42,4 @@ source venv/bin/activate
 
 ## References
 These repositiries highly helped me to build this project
-<ul><li>[bentrevett/sentiment-analysis](https://github.com/bentrevett/pytorch-sentiment-analysis)</li></ul>
+[bentrevett/sentiment-analysis](https://github.com/bentrevett/pytorch-sentiment-analysis)
