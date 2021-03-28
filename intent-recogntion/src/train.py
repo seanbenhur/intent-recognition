@@ -9,7 +9,7 @@ from config import *
 from models.lstm import LSTM
 
 
-torch.manual_seed(SEED)
+torch.manual_seed(1234)
 torch.backends.cudnn.deterministic = True
 
 
